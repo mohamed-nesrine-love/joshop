@@ -1,0 +1,41 @@
+
+<div class="card mb-3" style="max-width: 800px;">
+    <div class="row no-gutters">
+      <div class="col-md-6" style="margin-top: 20px;">
+        <img src="{{p.img}}" class="card-img" alt="...">
+      </div>
+          <div class="col-md-6">
+             <div class="card-body">
+                <table class="table">
+                   <thead class="thead-dark">
+                    <ng-container *ngFor="let item of items">
+                    <tr>
+                       <th scope="row">{{item.text}}</th>
+                       <td >{{afficher(item.text)}}</td>
+                       <td>
+                        <div>
+                          <i class="fa fa-pencil"  style="color:green;cursor:pointer;"  *ngIf='!item.inputshow' id="item-{{ item.id }} " (click)="item.inputshow = !item.inputshow"> </i>
+                          <input *ngIf='item.inputshow' ([ngModel])='"val" + item.id' type='text' id='{{item.id}}' />
+                       
+                          <i class="fa fa-check" style="color:blue;cursor:pointer;"  (click)='modifier(text.value) ; item.inputshow = !item.inputshow' ></i>
+                          <i class="fa fa-window-close"  (click)="item.inputshow = !item.inputshow" style="color:red;cursor:pointer;" ></i>                    
+                        </div>
+                       
+                       </td>
+                    </tr>
+                  </ng-container>
+             
+                </thead>
+            </table >
+        
+     <a href="../produit" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i>Back</a>
+     <button (click)="supprimerProduit(p.id)"><i class="fa fa-trash" aria-hidden="true"></i>Supprimer</button>
+     
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+   

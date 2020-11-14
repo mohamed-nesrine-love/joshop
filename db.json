@@ -1,0 +1,14 @@
+{
+  "produit": [
+    {
+      "id": 1,
+      "nomProduit": "",
+      "Categorie": "",
+      "prixAchat": 50,
+      "prixVente": 60,
+      "marge": 10,
+      "quantite": 20,
+      "img": "../assets/image/bouji.jpg"
+    }
+  ]
+}
